@@ -12,12 +12,10 @@ api_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkQXQiOjE3Mzk5NjIzNT
 
 def check_data():
     try:
-        # Set up headers with the API token
         headers = {
             "token": api_token
         }
 
-        # Set up parameters
         params = {
             "address": "AxriehR6Xw3adzHopnvMn7GcpRFcD41ddpiTWMg6pump",
             "time[]": ["20250224", "20250226"]
@@ -26,7 +24,6 @@ def check_data():
         # Make the GET request with parameters
         response = requests.get(url, headers=headers, params=params)
 
-        # Check if the request was successful
         if response.status_code == 200:
             data = response.json()
             print("Success! Data received:")
